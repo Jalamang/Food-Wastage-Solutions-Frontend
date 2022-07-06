@@ -1,0 +1,15 @@
+.merchandises{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 90%;
+    margin: 0 auto;
+
+
+    @media only screen and (max-width: 600px)  {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+        width: 90%;  
+    }
+}

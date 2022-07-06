@@ -1,0 +1,25 @@
+.productCard {
+  display: flex;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+
+  &__image img {
+    width: 12rem;
+    height: 10rem;
+    border-radius: 12px;
+  }
+  &__info {
+    font-size: 32px;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    &__info {
+      font-size: 32px;
+      font-weight: 100;
+      text-transform: lowercase;
+    }
+  }
+}

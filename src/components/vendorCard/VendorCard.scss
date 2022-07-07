@@ -1,4 +1,31 @@
 .vendorCard{
-border: 5px solid;
-background-color: #fff;
+    display: block;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    border: 5px solid gray;
+    border-radius: 5px 12px;
+    width: 12rem;
+    height: 12rem;
+    margin: 2rem 25%;
+
+    &__image img {
+      width: 12rem;
+      height: 8.5rem;
+     
+      
+    }
+    &__info {
+      margin: 0 5px;
+      font-size: 20px;
+      font-weight: 100;
+      margin-bottom: 8px;
+    }
+  
+    @media only screen and (max-width: 600px) {
+      &__info {
+        font-size: 20px;
+        font-weight: 100;
+        text-transform: lowercase;
+      }
+    }
 }

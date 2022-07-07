@@ -1,8 +1,9 @@
+
 .merchandises{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
     width: 90%;
+    padding: 0;
     margin: 0 auto;
 
 

@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
         <img src={image} alt={category}></img>
       </div>
       <div className='productCard__info'>
-        <div>{category}</div>
+        <div>{category[0].toUpperCase() + category.slice(1)}</div>
         <div>{address}</div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import VendorCard from '../vendorCard/VendorCard';
-
+import "./Vendors.scss"
 const Vendors = () => {
     const URL = 'http://localhost:3309/vendors/'
     // const API = process.env.REACT_APP_API_URL;
@@ -22,11 +22,11 @@ const Vendors = () => {
     }, []); // empty array means run on mount
     
   return (
-     <>
+     <div className='vendors'>
      {vendors.map(vendor => {
         return ( <VendorCard key={vendor.vendor_id} vendor ={vendor}/>)
      })}
-     </>
+     </div>
   )
 }
 

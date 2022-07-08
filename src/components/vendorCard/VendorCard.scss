@@ -1,24 +1,25 @@
 .vendorCard{
     display: block;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
     border: 5px solid gray;
     border-radius: 5px 12px;
     width: 12rem;
     height: 12rem;
-    margin: 2rem 25%;
-
+    // margin: 0 ;
+  
     &__image img {
       width: 12rem;
       height: 8.5rem;
      
       
     }
+
     &__info {
-      margin: 0 5px;
+      background-color:gray;
+      margin: 2px 5px;
       font-size: 20px;
       font-weight: 100;
-      margin-bottom: 8px;
+      color: rgb(203, 209, 209);
+      font-family:'Times New Roman', Times, serif;
     }
   
     @media only screen and (max-width: 600px) {

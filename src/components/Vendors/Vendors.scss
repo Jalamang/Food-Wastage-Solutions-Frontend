@@ -1,6 +1,13 @@
 .vendors{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
     background-color: background-darkGray;
+    margin: 12rem 15%;
+    gap: 2.2rem;
+
+    @media only screen and (max-width: 700px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        
+      }
 }

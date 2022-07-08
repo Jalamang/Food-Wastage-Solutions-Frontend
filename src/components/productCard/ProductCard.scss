@@ -3,11 +3,13 @@
   margin-bottom: 2rem;
   margin-top: 2rem;
   padding: 0.5rem;
+  
   &__image img {
     width: 12rem;
     height: 10rem;
     border-radius: 12px;
   }
+
   &__info {
     margin: 0 5px;
     font-size: 20px;
@@ -15,6 +17,7 @@
     margin-bottom: 8px;
   }
 
+ 
   @media only screen and (max-width: 600px) {
     &__info {
       font-size: 20px;

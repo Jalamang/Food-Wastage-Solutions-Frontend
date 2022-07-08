@@ -14,12 +14,11 @@ const Merchandises = () => {
         fetch(URL)
         .then(response => response.json()) // get our vendors
         .then(data => { 
-            console.log(data)
             setProducts(data.vendors);// update our vendors hook with the new data
         })
 
     }, []); // empty array means run on mount
-    console.log(products)
+
   return (
      <div className='merchandises'>
      {products.map(product => {

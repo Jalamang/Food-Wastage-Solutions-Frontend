@@ -1,12 +1,14 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import ProductCard from '../productCard/ProductCard';
+import SearchComponent from '../searchComponent/SearchComponent';
 import "./Merchandises.scss"
 const Merchandises = () => {
     const URL = 'http://localhost:3309/merchandises/'
     // const API = process.env.REACT_APP_API_URL;
 
     const [products, setProducts] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
 
     // functions
     useEffect(() => {
@@ -19,14 +21,26 @@ const Merchandises = () => {
 
     }, []); // empty array means run on mount
 
-  return (
+    let filteredProducts = products;
+    if(searchTerm){
+        filteredProducts = products.filter(product => {
+           const productCategory = product.category.toLowerCase();
+           const searchTermToLowerCase = searchTerm.toLowerCase();
+            return productCategory.includes(searchTermToLowerCase)
+    })
+}
+  return (<>
+    <SearchComponent searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
      <div className='merchandises'>
-     {products.map(product => {
-        
-        return ( <ProductCard
-             key={product.Merchan_id} product ={product}/>)
-     })}
+      
+    {filteredProducts.map((product) => {
+            return (
+                <ProductCard product={product} key={product.merchan_id} />
+            )
+           })}
      </div>
+     {filteredProducts.length === 0 && <div className="merchandises__noResults">No search result for this category </div>}
+     </>
   )
 }
 

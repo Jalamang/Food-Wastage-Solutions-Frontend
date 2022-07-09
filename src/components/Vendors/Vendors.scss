@@ -1,9 +1,17 @@
+@import "../../designUtils/colors";
+
 .vendors{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     background-color: background-darkGray;
-    margin: 12rem 15%;
-    gap: 2.2rem;
+    margin: 7rem 15%;
+    gap: $border2Rem;
+
+    &__noResults{
+      margin: 0 40%;
+      color: rgb(145, 84, 3);
+      font-weight: 600;
+  }
 
     @media only screen and (max-width: 700px) {
             display: grid;

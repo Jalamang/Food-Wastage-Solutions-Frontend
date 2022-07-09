@@ -1,7 +1,9 @@
+@import "../../designUtils/colors";
+
 .productCard {
   display: flex;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-bottom: $border2Rem;
+  margin-top: $border2Rem;
   padding: 0.5rem;
   
   &__image img {
@@ -16,6 +18,8 @@
     font-weight: 100;
     margin-bottom: 8px;
   }
+
+
 
  
   @media only screen and (max-width: 600px) {

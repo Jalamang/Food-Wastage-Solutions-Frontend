@@ -2,7 +2,7 @@ import React from "react";
 import "./VendorCard.scss";
 const VendorCard = ({ vendor }) => {
   const { name, business_type, photo, address, profile } = vendor;
-  console.log(vendor);
+
 
   return (
     <div className="vendorCard">

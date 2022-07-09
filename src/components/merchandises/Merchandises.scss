@@ -3,10 +3,13 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 90%;
-    padding: 0;
-    margin: 0 auto;
+    margin: 3rem auto;
 
-
+&__noResults{
+    margin: 0 40%;
+    color: rgb(145, 84, 3);
+    font-weight: 600;
+}
     @media only screen and (max-width: 600px)  {
         display: grid;
         grid-template-columns: repeat(1, 1fr);

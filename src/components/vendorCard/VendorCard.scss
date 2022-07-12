@@ -3,14 +3,18 @@
     border: 5px solid gray;
     border-radius: 5px 12px;
     width: 12rem;
-    height: 12rem;
+    height: max-content;
   
   
     &__image img {
       width: 12rem;
       height: 8.5rem;
-     
-      
+    }
+
+    &__toggleIcon {
+      text-decoration: none;
+      width: 12rem;
+      background-color: rgb(149, 133, 133);
     }
 
     &__info {

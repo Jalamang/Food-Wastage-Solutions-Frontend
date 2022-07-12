@@ -1,19 +1,29 @@
+.merchandises {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 90%;
+  margin: 1rem auto;
 
-.merchandises{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 90%;
-    margin: 3rem auto;
-
-&__noResults{
+  &__noResults {
     margin: 0 40%;
     color: rgb(145, 84, 3);
     font-weight: 600;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    width: 90%;
+  }
 }
-    @media only screen and (max-width: 600px)  {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        gap: 1rem;
-        width: 90%;  
-    }
+
+.searchTerm {
+  margin: 0 42%;
+  position: relative;
+  bottom: 2.7rem;
+  font-size: small;
+  color: grey;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }

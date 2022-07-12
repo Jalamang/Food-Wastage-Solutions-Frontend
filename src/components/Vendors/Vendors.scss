@@ -3,8 +3,9 @@
 .vendors{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    // grid-auto-rows: minmax(100px, auto);
     background-color: background-darkGray;
-    margin: 7rem 15%;
+    margin: $border2Rem 15%;
     gap: $border2Rem;
 
     &__noResults{
@@ -13,9 +14,20 @@
       font-weight: 600;
   }
 
+
     @media only screen and (max-width: 700px) {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
         
       }
 }
+
+  .searchTerm{
+    // margin: 0 80%;
+    position: relative;
+    bottom: 2.7rem;
+    font-size: small;
+    color: grey;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }

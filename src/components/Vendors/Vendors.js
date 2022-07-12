@@ -21,9 +21,9 @@ const Vendors = ({ placeholder }) => {
   }, []); // empty array means run on mount
 
   let filteredVendors = !searchTerm ? vendors: vendors.filter((vendor) => {
-    const vendorName = vendor.name.toLowerCase();
-    const searchTermLowerCase = searchTerm.toLowerCase();
-    return vendorName.includes(searchTermLowerCase);
+    const vendorId = vendor.vendor_id;
+    const searchTermInteger = Number(searchTerm);
+    return vendorId === searchTermInteger;
   });
 
 
@@ -32,13 +32,15 @@ const Vendors = ({ placeholder }) => {
       <SearchComponent
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
-        placeholder="search by name"
+        placeholder="search by id"
       />
+      <div  className='searchTerm'>Search by the 5-digit vendor id e.g 90019</div>
       <div className="vendors">
         {filteredVendors.map((vendor) => {
           return <VendorCard key={vendor.vendor_id} vendor={vendor} />;
         })}
       </div>
+      
       {filteredVendors.length === 0 &&
         <div className="vendors__noResults">
           No vendor with this name{" "}

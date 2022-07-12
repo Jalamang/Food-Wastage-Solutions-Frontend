@@ -1,9 +1,12 @@
 import React from 'react'
+import axios from "axios";
 import { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
 import ProductCard from '../productCard/ProductCard';
 import SearchComponent from '../searchComponent/SearchComponent';
 import "./Merchandises.scss"
 const Merchandises = () => {
+
     const URL = 'http://localhost:3309/merchandises/'
     // const API = process.env.REACT_APP_API_URL;
 
@@ -31,8 +34,8 @@ const Merchandises = () => {
 }
   return (<>
     <SearchComponent searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+    <div className='searchTerm'>e.g Meat, Vegetable, Fish</div>
      <div className='merchandises'>
-      
     {filteredProducts.map((product) => {
             return (
                 <ProductCard product={product} key={product.merchan_id} />

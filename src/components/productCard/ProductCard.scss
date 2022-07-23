@@ -3,8 +3,12 @@
 .productCard {
   display: flex;
   margin-bottom: $border2Rem;
-  margin-top: $border2Rem;
-  padding: 0.5rem;
+  margin: 1rem;
+  
+  padding: 0 0.5rem;
+  border-radius: 12px;
+  box-shadow: 5px 12px 20px black;
+  border: 2px solid rgb(234, 225, 225);
   
   &__image img {
     width: 12rem;

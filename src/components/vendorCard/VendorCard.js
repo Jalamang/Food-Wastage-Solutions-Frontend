@@ -1,14 +1,12 @@
 import React from "react";
 import "./VendorCard.scss";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-
-
+import { Link, useNavigate } from "react-router-dom";
 
 const VendorCard = ({ vendor }) => {
   const [showImage, setShowImage] = useState(false);
   const { name, business_type, photo, address, profile, vendor_id } = vendor;
-
+const navigate = useNavigate()
   const toggleImage = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -30,6 +28,7 @@ const VendorCard = ({ vendor }) => {
      { showImage && <button className="vendorCard__toggleIcon" onClick={(e) => toggleImage(e)} >Hide Photo</button>}
 
       </div>
+      <button onClick={() => navigate('/vendors/'+ vendor_id +'/edit')}>Edit</button>
     </div>
   );
 };

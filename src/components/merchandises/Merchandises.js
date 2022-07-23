@@ -1,7 +1,5 @@
 import React from 'react'
-import axios from "axios";
 import { useState, useEffect } from 'react';
-import { useParams } from "react-router-dom";
 import ProductCard from '../productCard/ProductCard';
 import SearchComponent from '../searchComponent/SearchComponent';
 import "./Merchandises.scss"
@@ -19,10 +17,13 @@ const Merchandises = () => {
         fetch(URL)
         .then(response => response.json()) // get our vendors
         .then(data => { 
-            setProducts(data.vendors);// update our vendors hook with the new data
+            console.log(data)
+            setProducts(data.merchandises);// update our vendors hook with the new data
         })
 
     }, []); // empty array means run on mount
+
+
 
     let filteredProducts = products;
     if(searchTerm){

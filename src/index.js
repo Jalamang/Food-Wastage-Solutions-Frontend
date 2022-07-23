@@ -4,7 +4,10 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.css'
+import "bootstrap-icons/font/bootstrap-icons.css";
 import './index.css';
+import 'bootstrap/dist/js/bootstrap.js';
 
 const container = document.getElementById('root');
 const root = createRoot(container);

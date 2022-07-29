@@ -30,15 +30,16 @@ const Routing = () => {
         <Route element={<PrivateRoutes />}>
         <Route path='/vendors' element={<Vendors />} /> 
         <Route path='/merchandises' element={<Merchandises />} />
-        <Route path='/merchandises/new' element={<NewProduct/>} />  
+        
         </Route>
         <Route element={<RestrictedRoutes />}>
         <Route path='/merchandises/:id' element={<ProductDetail/>} /> 
         <Route path='/merchandises/:id/edit' element={<NewProduct/>} /> 
         <Route path='/vendors/:id' element={<VendorDetails/>} /> 
         <Route path='/vendors/:id/edit' element={<EditVendor/>} /> 
-        <Route path='/vendors/new' element={<NewVendor/>} /> 
+        <Route path='/merchandises/new' element={<NewProduct/>} /> 
         <Route path='/vendors/login' element={<Login/>} /> 
+        <Route path='/vendors/new' element={<NewVendor/>} /> 
         </Route>
         
     </Routes>

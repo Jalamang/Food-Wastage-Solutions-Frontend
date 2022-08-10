@@ -33,7 +33,7 @@
   justify-content: space-evenly;
   width: 80%;
   margin-left: 5rem;
-  margin-right: 2rem;
+  margin-right: 5rem;
 }
 .row {
   display: flex;
@@ -46,4 +46,10 @@
 .location-title {
   margin-left: 8rem;
   padding: 1rem;
+}
+
+button.tile-filter{
+  background-color: rgb(37, 90, 109);
+  width: 15rem;
+  text-align: left;
 }

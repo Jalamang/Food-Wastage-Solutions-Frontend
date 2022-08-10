@@ -1,0 +1,16 @@
+.product {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 0.8rem;
+  margin: auto 7rem;
+  margin-top: 5rem;
+  
+  &__fieldInfo {
+    width: 25vh;
+    padding: 0.2rem;
+    border: none;
+    border-bottom: 0.2px solid gray;
+    outline: none;
+  }
+}

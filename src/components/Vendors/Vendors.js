@@ -5,7 +5,8 @@ import VendorCard from "../vendorCard/VendorCard";
 import "./Vendors.scss";
 const Vendors = ({ placeholder }) => {
   const URL = "http://localhost:3309/vendors/";
-  // const API = process.env.REACT_APP_API_URL;
+  // const URL = "https://food-waste-solution-backend.herokuapp.com/vendors/";
+  
 
   const [vendors, setVendors] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");

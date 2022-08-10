@@ -1,0 +1,49 @@
+.vendorForm {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 0.3rem;
+  margin: 2rem 25%;
+  margin-top: 2rem;
+  background-color: #e9f0f4;
+  width: 50%;
+  height: 75vh;
+  border-radius: 15px;
+  box-shadow: 3px 2px 3px black;
+  &__fieldInfo {
+    width: 40vh;
+    padding: 0.2rem;
+    border: none;
+    border-bottom: 0.2px solid gray;
+    outline: none;
+  }
+
+  &__fieldInfo:focus {
+    border-bottom: 1.9px solid;
+  }
+
+  &__submit {
+    height: 2rem;
+    width: 12rem;
+    margin-left: 7.4rem;
+    margin-top: 0.5rem;
+    &:focus {
+      background-color: rgb(33, 150, 35);
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    margin: 2rem 12%;
+    background-color: #e9f0f4;
+    width: auto;
+    height: 75vh;
+    border-radius: 15px;
+
+    
+    &__fieldInfo {
+      width: 30vh;
+      padding: 0.2rem;
+      border-bottom: 0.2px solid gray;
+    }
+  }
+}

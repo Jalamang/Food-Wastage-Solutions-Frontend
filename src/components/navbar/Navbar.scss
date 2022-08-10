@@ -1,0 +1,44 @@
+@import "../../designUtils/colors";
+
+.navbar {
+  display: flex;
+  height: auto;
+  // justify-content: space-between;
+  align-items: center;
+  background-color: $background-darkGray;
+
+  &__eHome{
+    font-size: xxx-large;
+    color: rgb(187, 152, 24);
+  }
+  &__elements {
+    padding: 0 6rem;
+    border-radius:20%;
+    margin: 1rem;
+    border: 2px solid;
+    color: rgb(120, 138, 154);
+    font-size: larger;
+    font-weight: 900;
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  @media only screen and (max-width: 600px) {
+    &__elements {
+      padding: 0 0.5rem;
+    }
+  }
+
+  // @media only screen and (max-width: 440px) {
+  //   &__elements {
+  //     padding-left: 0 0.9rem;
+  //   }
+  // }
+
+  @media screen and (min-width: 400px) and (max-width: 768px) {
+    &__elements {
+      padding-left: 0 0.9rem;
+    }
+  }
+}
+
+

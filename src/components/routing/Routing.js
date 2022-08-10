@@ -8,17 +8,18 @@ import ProductDetail from '../../pages/productDetail/ProductDetail'
 import VendorDetails from '../../pages/vendorDetails/VendorDetails'
 import NewVendor from '../newVendor/NewVendor'
 import EditVendor from '../editVendor/EditVendor'
+import { useSelector } from 'react-redux'
 import NewProduct from '../newProduct/NewProduct'
 import Login from '../loginLogout/Login'
 
 const PrivateRoutes = () => {
-const isAuth = false
+  const { isAuth } = useSelector((state) => state.auth)
 return <>{isAuth ? <Outlet /> : <Navigate to="/vendors/login" />}</>
 }
 
 const RestrictedRoutes = () => {
-  const isAuth = false
-  return <>{!isAuth ? <Outlet /> : <Navigate to="/vendors" />}</>
+  const { isAuth } = useSelector((state) => state.auth)
+  return <>{!isAuth ? <Outlet /> : <Navigate to="/merchandises" />}</>
   }
 const Routing = () => {
   return (<>
@@ -30,14 +31,14 @@ const Routing = () => {
         <Route element={<PrivateRoutes />}>
         <Route path='/vendors' element={<Vendors />} /> 
         <Route path='/merchandises' element={<Merchandises />} />
-        
-        </Route>
-        <Route element={<RestrictedRoutes />}>
-        <Route path='/merchandises/:id' element={<ProductDetail/>} /> 
+        <Route path='/merchandises/new' element={<NewProduct/>} />
+        <Route path='/vendors/:id/edit' element={<EditVendor/>} />
         <Route path='/merchandises/:id/edit' element={<NewProduct/>} /> 
+        <Route path='/merchandises/:id' element={<ProductDetail/>} />
         <Route path='/vendors/:id' element={<VendorDetails/>} /> 
-        <Route path='/vendors/:id/edit' element={<EditVendor/>} /> 
-        <Route path='/merchandises/new' element={<NewProduct/>} /> 
+        </Route>
+
+        <Route element={<RestrictedRoutes />}>
         <Route path='/vendors/login' element={<Login/>} /> 
         <Route path='/vendors/new' element={<NewVendor/>} /> 
         </Route>

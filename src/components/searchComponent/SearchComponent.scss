@@ -1,0 +1,19 @@
+.searchBar {
+  display: flex;
+  margin: 3rem auto;
+  width: 20%;
+  height: 2rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  text-align: center;
+  background-color: rgba(4, 32, 33, 0.348);
+  
+  &:focus {
+    border-bottom: 2px solid;
+    border: none;
+    border-bottom: 1px solid #b4becb;
+    width: 30%;
+    padding: 3px;
+    font-size: 16px;
+  }
+}

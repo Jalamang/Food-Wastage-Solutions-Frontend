@@ -5,23 +5,43 @@ import SearchComponent from "../searchComponent/SearchComponent";
 import "./Merchandises.scss";
 const Merchandises = () => {
   const URL = "http://localhost:3309/merchandises/";
-  // const API = process.env.REACT_APP_API_URL;
+
 
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-
-  // functions
+  const [location, setLocation] = useState("");
+  
   useEffect(() => {
-    // reach out to the backend
+  
     fetch(URL)
-      .then((response) => response.json()) // get our vendors
+      .then((response) => response.json()) 
       .then((data) => {
-        console.log(data);
-        setProducts(data.merchandises); // update our vendors hook with the new data
+        setProducts(data.merchandises); 
       });
-  }, []); // empty array means run on mount
+  }, []); 
+
+  function findLocation() {
+    let buttons = document.querySelectorAll("button.tile-filter");
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", () => {
+        setLocation(buttons[i].firstChild.nodeValue);
+      });
+    }
+  }
 
   let filteredProducts = products;
+
+  if (location === "All locations") {
+    filteredProducts = products;
+  } else if (location) {
+    filteredProducts = products.filter((product) => {
+      const productCategory = product.address.toLowerCase();
+      const locationToLowerCase = location.toLowerCase();
+      return productCategory.includes(locationToLowerCase);
+    });
+  }
+
+  // let filteredProducts = products;
   if (searchTerm) {
     filteredProducts = products.filter((product) => {
       const productCategory = product.category.toLowerCase();
@@ -29,6 +49,7 @@ const Merchandises = () => {
       return productCategory.includes(searchTermToLowerCase);
     });
   }
+
   return (
     <>
       <SearchComponent searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
@@ -42,15 +63,25 @@ const Merchandises = () => {
         <div className=" merchandises-row">
           <button className="tile-filter">All locations</button>
 
-          <button className="tile-filter">Brikama</button>
+          <button className="tile-filter" onClick={findLocation}>
+            Brikama
+          </button>
 
-          <button className="tile-filter">Farafenni</button>
+          <button className="tile-filter" onClick={findLocation}>
+            Farafenni
+          </button>
 
-          <button className="tile-filter">Basse</button>
+          <button className="tile-filter" onClick={findLocation}>
+            Basse
+          </button>
 
-          <button className="tile-filter">Soma &amp; Pakalinding</button>
+          <button className="tile-filter" onClick={findLocation}>
+            Soma &amp; Pakalinding
+          </button>
 
-          <button className="tile-filter">Badibou</button>
+          <button className="tile-filter" onClick={findLocation}>
+            Badibou
+          </button>
         </div>
       </div>
 

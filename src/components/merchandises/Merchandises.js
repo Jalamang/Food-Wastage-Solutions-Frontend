@@ -6,19 +6,17 @@ import "./Merchandises.scss";
 const Merchandises = () => {
   const URL = "http://localhost:3309/merchandises/";
 
-
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [location, setLocation] = useState("");
-  
+
   useEffect(() => {
-  
     fetch(URL)
-      .then((response) => response.json()) 
+      .then((response) => response.json())
       .then((data) => {
-        setProducts(data.merchandises); 
+        setProducts(data.merchandises);
       });
-  }, []); 
+  }, []);
 
   function findLocation() {
     let buttons = document.querySelectorAll("button.tile-filter");
@@ -29,7 +27,7 @@ const Merchandises = () => {
     }
   }
 
-  let filteredProducts = products
+  let filteredProducts = products;
 
   if (location === "All locations") {
     filteredProducts = products;
@@ -41,7 +39,6 @@ const Merchandises = () => {
     });
   }
 
-  // let filteredProducts = products;
   if (searchTerm) {
     filteredProducts = products.filter((product) => {
       const productCategory = product.category.toLowerCase();
@@ -58,7 +55,11 @@ const Merchandises = () => {
       <div className="row">
         <div className="location-title">
           <h4>Find merchandises by location</h4>
-          <h6 style={{color: "#FFF4A3"}}><strong>You must be signed in to view details of a merchandise</strong></h6>
+          <h6 style={{ color: "#FFF4A3" }}>
+            <strong>
+              You must be signed in to view details of a merchandise
+            </strong>
+          </h6>
         </div>
         <div className=" merchandises-row">
           <button className="tile-filter">All locations</button>

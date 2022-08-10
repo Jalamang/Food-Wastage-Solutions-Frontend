@@ -9,7 +9,7 @@
     color: rgb(145, 84, 3);
     font-weight: 600;
   }
-  
+
   @media only screen and (max-width: 600px) {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -28,12 +28,22 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
-
-.merchandises-row{
-
+.merchandises-row {
   display: flex;
   justify-content: space-evenly;
-  width: 25vh;
-  margin: 1rem auto;
-  background-color: rgb(16, 87, 87);
+  width: 80%;
+  margin-left: 5rem;
+  margin-right: 2rem;
+}
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1rem 25%;
+  background-color: rgb(2, 35, 35);
+  color: white;
+}
+
+.location-title {
+  margin-left: 8rem;
+  padding: 1rem;
 }

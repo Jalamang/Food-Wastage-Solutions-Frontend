@@ -29,7 +29,7 @@ const Merchandises = () => {
     }
   }
 
-  let filteredProducts = products;
+  let filteredProducts = products
 
   if (location === "All locations") {
     filteredProducts = products;
@@ -56,9 +56,9 @@ const Merchandises = () => {
       <div className="searchTerm">e.g Meat, Vegetable, Fish</div>
 
       <div className="row">
-        <div className="location-title ">
+        <div className="location-title">
           <h4>Find merchandises by location</h4>
-          <h6>Browse open merchandises in different locations</h6>
+          <h6 style={{color: "#FFF4A3"}}><strong>You must be signed in to view details of a merchandise</strong></h6>
         </div>
         <div className=" merchandises-row">
           <button className="tile-filter">All locations</button>

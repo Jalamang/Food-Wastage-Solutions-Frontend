@@ -10,12 +10,41 @@
     font-weight: 600;
   }
 
-  @media only screen and (max-width: 600px) {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1rem;
-    width: 90%;
-  }
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 595px) {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+/* Small screen devices (600px and above) */
+@media only screen and (min-width: 600px) {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
 }
 
 .searchTerm {
@@ -46,10 +75,18 @@
 .location-title {
   margin-left: 8rem;
   padding: 1rem;
+
 }
 
-button.tile-filter{
+button.loc-filter{
   background-color: rgb(37, 90, 109);
   width: 15rem;
-  text-align: left;
+  text-align: center;
+  // width: 90%;
+}
+
+button.loc-filter:hover{
+  background-color: rgb(168, 235, 235);
+  border-bottom: groove;
+  text-transform: uppercase;
 }

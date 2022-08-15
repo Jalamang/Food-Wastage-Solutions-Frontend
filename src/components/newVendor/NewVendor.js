@@ -50,8 +50,8 @@ console.log(vendor)
 
 const pattern = {
     phone: /^([1-9]{1})([0-9]{2})-([1-9]{1})([0-9]{2})-([0-9]{4})$/, // eslint-disable-next-line
-    name:/^([a-z\d\s]){5,20}$/gi,
-    password: /^[\w@-]{6,16}$/,
+    name:/^([a-z\d\s]){2,20}$/gi,
+    password: /^[\w@-]{6,20}$/,
     email:/^([a-z\d\.\-]+)@([a-z\d-]+)\.([a-z]{2,5})(\.[a-z{2,5}])?$/
   }
 

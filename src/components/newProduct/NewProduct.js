@@ -48,6 +48,15 @@ console.log(product.category)
       <option value="Vegetable"> Produce Dept</option>
       </select>
 
+      <label htmlFor="location"> Location</label>
+      <input
+        className="product__fieldInfo"
+        type="text"
+        id="location"
+        value={product.location || ""}
+        onChange={handleTextChange}
+        required
+      />
       <label htmlFor="address"> Address</label>
       <input
         className="product__fieldInfo"

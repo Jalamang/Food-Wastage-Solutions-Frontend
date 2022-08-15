@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-// import axios from "axios";
 import Alert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 
@@ -85,6 +84,9 @@ const ProductDetail = () => {
             </div>
             <div>
               {product.address[0].toUpperCase() + product.address.slice(1)}
+            </div>
+            <div>
+              {product.location[0].toUpperCase() + product.location.slice(1)}
             </div>
           </div>
         </div>

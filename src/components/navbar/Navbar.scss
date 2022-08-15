@@ -28,11 +28,11 @@
     }
   }
 
-  // @media only screen and (max-width: 440px) {
-  //   &__elements {
-  //     padding-left: 0 0.9rem;
-  //   }
-  // }
+  @media only screen and (max-width: 440px) {
+    &__elements {
+      padding-left: 0 0.9rem;
+    }
+  }
 
   @media screen and (min-width: 400px) and (max-width: 768px) {
     &__elements {

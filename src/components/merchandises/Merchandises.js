@@ -19,7 +19,7 @@ const Merchandises = () => {
   }, []);
 
   function findLocation() {
-    let buttons = document.querySelectorAll("button.tile-filter");
+    let buttons = document.querySelectorAll("button.loc-filter");
     for (let i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener("click", () => {
         setLocation(buttons[i].firstChild.nodeValue);
@@ -33,7 +33,7 @@ const Merchandises = () => {
     filteredProducts = products;
   } else if (location) {
     filteredProducts = products.filter((product) => {
-      const productCategory = product.address.toLowerCase();
+      const productCategory = product.location.toLowerCase();
       const locationToLowerCase = location.toLowerCase();
       return productCategory.includes(locationToLowerCase);
     });
@@ -54,7 +54,7 @@ const Merchandises = () => {
 
       <div className="row">
         <div className="location-title">
-          <h4>Find merchandises by location</h4>
+          <h4>Find merchandise by location</h4>
           <h6 style={{ color: "#FFF4A3" }}>
             <strong>
               You must be signed in to view details of a merchandise
@@ -62,25 +62,25 @@ const Merchandises = () => {
           </h6>
         </div>
         <div className=" merchandises-row">
-          <button className="tile-filter">All locations</button>
+          <button className="loc-filter">All locations</button>
 
-          <button className="tile-filter" onClick={findLocation}>
+          <button className="loc-filter" onClick={findLocation}>
             Brikama
           </button>
 
-          <button className="tile-filter" onClick={findLocation}>
+          <button className="loc-filter" onClick={findLocation}>
             Farafenni
           </button>
 
-          <button className="tile-filter" onClick={findLocation}>
+          <button className="loc-filter" onClick={findLocation}>
             Basse
           </button>
 
-          <button className="tile-filter" onClick={findLocation}>
+          <button className="loc-filter" onClick={findLocation}>
             Soma &amp; Pakalinding
           </button>
 
-          <button className="tile-filter" onClick={findLocation}>
+          <button className="loc-filter" onClick={findLocation}>
             Badibou
           </button>
         </div>

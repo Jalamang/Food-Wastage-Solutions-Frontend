@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./ProductCard.scss";
 
 const ProductCard = ({ product }) => {
-  const { merchan_id, address, category, owner_id, image } = product;
+  const { merchan_id, address, location, category, owner_id, image } = product;
   const navigate = useNavigate();
 
   return (
@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
 
       <div className="productCard__info">
         <div>{category[0].toUpperCase() + category.slice(1)}</div>
-        <div>{address}</div>
+        <div>{location}</div>
         <br />
         <br />
         <button

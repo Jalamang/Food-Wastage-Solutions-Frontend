@@ -29,7 +29,7 @@ const NewVendor = () => {
   };
 
 
-console.log(vendor)
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -40,6 +40,7 @@ console.log(vendor)
           .then(() => navigate("/vendors"))
       : 
     await axios.post(URL +"/create", vendor).then(() => navigate(`/vendors`))
+    
     setSuccess()
     } catch (error) {
       console.log(error.response.data.errors[0].msg)

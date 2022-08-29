@@ -2,8 +2,15 @@ import React from "react";
 import { useState, useEffect } from "react";
 import ProductCard from "../productCard/ProductCard";
 import SearchComponent from "../searchComponent/SearchComponent";
+import Vendors from "../Vendors/Vendors";
 import "./Merchandises.scss";
-const Merchandises = () => {
+
+const Merchandises = ({
+  loggedInValue,
+  setLoggedInValue,
+  loginData
+  
+}) => {
   const URL = "http://localhost:3309/merchandises/";
 
   const [products, setProducts] = useState([]);
@@ -18,11 +25,12 @@ const Merchandises = () => {
       });
   }, []);
 
+  let checkboxes = document.querySelectorAll("input[type='radio']");
+
   function findLocation() {
-    let buttons = document.querySelectorAll("button.loc-filter");
-    for (let i = 0; i < buttons.length; i++) {
-      buttons[i].addEventListener("click", () => {
-        setLocation(buttons[i].firstChild.nodeValue);
+    for (let checkbox of checkboxes) {
+      checkbox.addEventListener("change", (e) => {
+        setLocation(e.target.attributes.id.value);
       });
     }
   }
@@ -48,55 +56,133 @@ const Merchandises = () => {
   }
 
   return (
-    <>
-      <SearchComponent searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <div className="searchTerm">e.g Meat, Vegetable, Fish</div>
-
-      <div className="row">
-        <div className="location-title">
-          <h4>Find merchandise by location</h4>
-          <h6 style={{ color: "#FFF4A3" }}>
+    <div className="main">
+      <div className="main__location-title">
+        <div className="location-title-message">
+          <h4 style={{ marginLeft: "2rem" }}>Find merchandise by location</h4>
+          <h6 style={{ marginLeft: "2rem", color: "#FFF4A3" }}>
             <strong>
               You must be signed in to view details of a merchandise
             </strong>
           </h6>
         </div>
-        <div className=" merchandises-row">
-          <button className="loc-filter">All locations</button>
-
-          <button className="loc-filter" onClick={findLocation}>
-            Brikama
-          </button>
-
-          <button className="loc-filter" onClick={findLocation}>
-            Farafenni
-          </button>
-
-          <button className="loc-filter" onClick={findLocation}>
-            Basse
-          </button>
-
-          <button className="loc-filter" onClick={findLocation}>
-            Soma &amp; Pakalinding
-          </button>
-
-          <button className="loc-filter" onClick={findLocation}>
-            Badibou
-          </button>
+        <div>
+          <SearchComponent
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+          />
         </div>
       </div>
 
-      <div className="merchandises">
-        {filteredProducts.map((product) => {
-          return <ProductCard product={product} key={product.merchan_id} />;
-        })}
-      </div>
-      {filteredProducts.length === 0 && (
-        <div className="merchandises__noResults">
-          No search result for this category{" "}
+      <div className="main__location-product">
+        <div className="main__location">
+          <div className="main__location-filter">
+            <label>
+              <input
+                type="radio"
+                id="All locations"
+                value={location}
+                onChange={findLocation}
+                name="radio_btn"
+                checked
+              />
+              {"  "}All locs
+            </label>
+          </div>
+
+          <div className="main__location-filter">
+            <label>
+              <input
+                type="radio"
+                id="Brikama"
+                value={location}
+                onChange={findLocation}
+                name="radio_btn"
+              />
+              {"  "}Brikama
+            </label>
+          </div>
+          <div className="main__location-filter">
+            <label>
+              <input
+                type="radio"
+                id="Farafenni"
+                value={location}
+                onChange={findLocation}
+                name="radio_btn"
+              />
+              {"  "}Farafenni
+            </label>
+          </div>
+          <div className="main__location-filter">
+            <label>
+              <input
+                type="radio"
+                id="Basse"
+                value={location}
+                onChange={findLocation}
+                name="radio_btn"
+              />
+              {"  "}Basse
+            </label>
+          </div>
+          <div className="main__location-filter">
+            <label>
+              <input
+                type="radio"
+                id="Soma &amp; Pakal"
+                value={location}
+                onChange={findLocation}
+                name="radio_btn"
+              />
+              {"  "} Soma &amp; Pakal
+            </label>
+          </div>
+          <div className="main__location-filter">
+            <label>
+              <input
+                type="radio"
+                id="Badibou"
+                value={location}
+                onChange={findLocation}
+                name="radio_btn"
+              />
+              {"  "} Badibou
+            </label>
+          </div>
         </div>
-      )}
-    </>
+
+        <div className="main__merchandises">
+          {filteredProducts.map((product) => {
+            return (
+              <ProductCard
+                product={product}
+                key={product.merchan_id}
+                loggedInValue={loggedInValue}
+                setLoggedInValue={setLoggedInValue}
+                loginData={loginData}
+              />
+            );
+          })}
+          {filteredProducts.length === 0 && (
+            <div
+              className="merchandises__noResults"
+              style={{
+                width: "35rem",
+                marginLeft: "25rem",
+                color: "red",
+                alignSelf: "center",
+              }}
+            >
+              No search result for this category{" "}
+            </div>
+          )}
+        </div>
+        <div className="vendor-side">
+          <Vendors />
+        </div>
+      </div>
+    </div>
   );
 };
 

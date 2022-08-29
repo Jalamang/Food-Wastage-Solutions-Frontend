@@ -12,7 +12,7 @@ const navigate = useNavigate()
     e.stopPropagation();
     setShowImage(!showImage);
 }
-// console.log(showImage)
+const temp = false //temp setting
   return (
     <div className="vendorCard">
       <Link to={`/vendors/${vendor_id}`} state={{vendor:vendor}}>
@@ -28,7 +28,7 @@ const navigate = useNavigate()
      { showImage && <button className="vendorCard__toggleIcon" onClick={(e) => toggleImage(e)} >Hide Photo</button>}
 
       </div>
-      <button onClick={() => navigate('/vendors/'+ vendor_id +'/edit')}>Edit</button>
+     {temp && <button onClick={() => navigate('/vendors/'+ vendor_id +'/edit')}>Edit</button>}
     </div>
   );
 };

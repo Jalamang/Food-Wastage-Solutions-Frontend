@@ -1,3 +1,4 @@
+@import "../../designUtils/colors";
 .vendorCard{
     display: block;
     border: 5px solid gray;
@@ -18,12 +19,13 @@
     }
 
     &__info {
-      background-color:gray;
+      // background-color:gray;
+      opacity: 1;
       margin: 2px 5px;
       font-size: 20px;
       font-weight: 100;
       color: rgb(203, 209, 209);
-      font-family:'Times New Roman', Times, serif;
+      font-family: $font-family;
     }
   
     @media only screen and (max-width: 600px) {
@@ -33,4 +35,11 @@
         text-transform: lowercase;
       }
     }
+}
+
+.vendorCard:hover{
+  transform: scale(.9);
+  border: 1px solid black;
+  background-color: cadetblue;
+  opacity: .8;
 }

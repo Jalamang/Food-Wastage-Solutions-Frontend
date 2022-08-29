@@ -1,5 +1,5 @@
 import { Routes, Route, BrowserRouter, Outlet, Navigate } from 'react-router-dom'
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Vendors from '../Vendors/Vendors'
 import Home from '../../pages/home/Home'
 import Merchandises from '../merchandises/Merchandises'
@@ -23,6 +23,13 @@ const RestrictedRoutes = () => {
   }
   
 const Routing = () => {
+  const [loggedInValue, setLoggedInValue] = useState({
+    email: "",
+    password: "",
+  });
+  const [loginData, setLoginData] = useState({});
+
+ console.log(loginData, loggedInValue)
   return (<>
     <BrowserRouter>
     <Navbar/>
@@ -31,7 +38,10 @@ const Routing = () => {
         
         <Route element={<PrivateRoutes />}>
         <Route path='/vendors' element={<Vendors />} /> 
-        <Route path='/merchandises' element={<Merchandises />} />
+        <Route path='/merchandises' element={<Merchandises  
+        loggedInValue={loggedInValue}
+        loginData={loginData} 
+        setLoggedInValue={setLoggedInValue}/>} />
         <Route path='/merchandises/new' element={<NewProduct/>} />
         <Route path='/vendors/:id/edit' element={<EditVendor/>} />
         <Route path='/merchandises/:id/edit' element={<NewProduct/>} /> 
@@ -40,7 +50,11 @@ const Routing = () => {
         </Route>
 
         <Route element={<RestrictedRoutes />}>
-        <Route path='/vendors/login' element={<Login/>} /> 
+        <Route path='/vendors/login' element={<Login 
+         loggedInValue={loggedInValue}
+         loginData={loginData} 
+         setLoginData={setLoginData}
+         setLoggedInValue={setLoggedInValue}/>} /> 
         <Route path='/vendors/new' element={<NewVendor/>} /> 
         </Route>
         

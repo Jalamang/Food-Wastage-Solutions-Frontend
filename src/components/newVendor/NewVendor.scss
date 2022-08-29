@@ -3,13 +3,16 @@
   justify-content: center;
   align-content: center;
   gap: 0.3rem;
-  margin: 2rem 25%;
-  margin-top: 2rem;
-  background-color: #e9f0f4;
-  width: 50%;
-  height: 75vh;
+  margin: 7rem 25%;
+  padding: 2rem;
+  background-color: #1b1c1d;
+  color: rgb(202, 194, 194);
+  opacity: .7;
+  // width: 50%;
+  // height: 75vh;
   border-radius: 15px;
-  box-shadow: 3px 2px 3px black;
+  // box-shadow: 3px 2px 3px black;
+
   &__fieldInfo {
     width: 40vh;
     padding: 0.2rem;

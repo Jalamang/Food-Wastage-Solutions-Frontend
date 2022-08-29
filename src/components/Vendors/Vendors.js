@@ -30,12 +30,12 @@ const Vendors = ({ placeholder }) => {
 
   return (
     <>
-      <SearchComponent
+      {/* <SearchComponent
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
         placeholder="search by id"
       />
-      <div  className='searchTerm'>Search by the 5-digit vendor id e.g 90019</div>
+      <div  className='searchTerm'>Search by the 5-digit vendor id e.g 90019</div> */}
       <div className="vendors">
         {filteredVendors.map((vendor) => {
           return <VendorCard key={vendor.vendor_id} vendor={vendor} />;

@@ -1,92 +1,139 @@
-.merchandises {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 90%;
-  margin: 1rem auto;
+@import "../../designUtils/colors";
+.main {
+  background-color: $location_Product_background;
+  height: 100vh;
+  gap: 2rem;
+  justify-content: space-evenly;
+  color: white;
+  font-family: $font-family;;
 
-  &__noResults {
+  &__location-title {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 7rem;
+    background: $location_Product_background;
+    gap: 2rem;
+    height: 25vh;
+  }
+
+  &__location-product {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 0.1fr;
+    background-color: rgb(121, 139, 142);
+    // border: 1px solid;
+    padding-left: auto;
+    // padding-right: 2rem;
+  }
+
+  &__merchandises {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 2rem 0;
+    border: 1px solid #37475B;
+    border-radius: 12px;
+    background-color: $location_Product_background;
+    padding: .8rem;
+    //scrollbar styling
+    height: 35rem;
+    overflow-y: scroll;
+    scrollbar-color: rgb(6, 47, 56);
+    scrollbar-width: thin;
+  }
+
+  &__merchandises__noResults {
     margin: 0 40%;
     color: rgb(145, 84, 3);
     font-weight: 600;
   }
 
+  &__location-title-message {
+    position: relative;
+    bottom: 3rem;
+    align-self: center;
+  }
 
+  &__location {
+    display: grid;
+    justify-content: space-evenly;
+    width: 85%;
+    height: 20rem;
+    margin: 2rem 1rem;
+    border: 1px solid #37475B;
+    border-radius: 12px 2px 5px;
+    box-shadow: 12px rgb(236, 217, 217);
+    background-color: $location_Product_background;
+    padding: 1rem;
+    color: white;
+  }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 595px) {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1rem;
-}
+  &__location-filter:hover {
+    // background-color: rgba(192, 239, 239, 0.485);
+    border-bottom: groove;
+    text-transform: uppercase;
+    height: 2rem;
+  }
 
-/* Small screen devices (600px and above) */
-@media only screen and (min-width: 600px) {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1rem;
-}
+  &__location div:not(:first-child) {
+    // margin-left: 2rem;
+  }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
+  &__location {
+    input[type="checkbox"]:not(:first-child) {
+      margin-left: 2rem;
+    }
+  }
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (max-width: 595px) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-}
+  /* Small screen devices (600px and above) */
+  @media only screen and (min-width: 600px) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
 
-.searchTerm {
-  margin: 0 42%;
-  position: relative;
-  bottom: 2.7rem;
-  font-size: small;
-  color: grey;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
+  /* Medium devices (landscape tablets, 768px and up) */
+  // @media only screen and (min-width: 768px) {
+  //   display: grid;
+  //   grid-template-columns: repeat(2, 1fr);
+  //   gap: 1rem;
+  // }
 
-.merchandises-row {
-  display: flex;
-  justify-content: space-evenly;
-  width: 80%;
-  margin-left: 5rem;
-  margin-right: 5rem;
-}
-.row {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 1rem 25%;
-  background-color: rgb(2, 35, 35);
-  color: white;
-}
+  /* Large devices (laptops/desktops, 992px and up) */
+  // @media only screen and (min-width: 992px) {
+  //   display: grid;
+  //   grid-template-columns: repeat(3, 1fr);
+  //   gap: 1rem;
+  // }
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  // @media only screen and (min-width: 1200px) {
+  //   &__merchandises {
+  //     display: grid;
+  //     grid-template-columns: repeat(5, 1fr);
+  //     margin: 1rem 2rem;
+  //     margin-left: 1rem;
+  //   }
 
-.location-title {
-  margin-left: 8rem;
-  padding: 1rem;
+  //   &__location {
+  //     width: 60%;
+  //   }
 
-}
+  //   &__location-product {
+  //     display: grid;
+  //     grid-template-columns: 0.2fr 1fr;
+  //     background-color: rgb(108, 115, 116);
+  //     border: 2px solid;
+  //   }
 
-button.loc-filter{
-  background-color: rgb(37, 90, 109);
-  width: 15rem;
-  text-align: center;
-  // width: 90%;
-}
-
-button.loc-filter:hover{
-  background-color: rgb(168, 235, 235);
-  border-bottom: groove;
-  text-transform: uppercase;
+  //   &__location-title {
+  //     padding-top: 7rem;
+  //     background: $location_Product_background;
+  //     gap: 2rem;
+  //     height: 15px;
+  //   }
+  // }
 }

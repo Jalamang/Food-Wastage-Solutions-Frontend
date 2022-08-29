@@ -2,11 +2,21 @@
 
 .vendors{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    // grid-auto-rows: minmax(100px, auto);
-    background-color: background-darkGray;
-    margin: $border2Rem 15%;
+    grid-template-columns: repeat(1, 1fr);
+    background-color: $location_Product_background;
+    margin-top: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
     gap: $border2Rem;
+    border: 1px solid #37475B;
+    padding-top: 1rem;
+    border-radius: 1px 12px 2px 12px;
+  //scrollbar styling
+    height: 35rem;
+    overflow-y: scroll;
+    scrollbar-color: rgb(6, 47, 56);
+    scrollbar-width: thin;
+    font-family: $font-family;
 
     &__noResults{
       margin: 0 40%;
@@ -23,7 +33,6 @@
 }
 
   .searchTerm{
-    // margin: 0 80%;
     position: relative;
     bottom: 2.7rem;
     font-size: small;

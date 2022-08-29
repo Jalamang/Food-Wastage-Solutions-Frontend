@@ -20,19 +20,19 @@ const NewProduct = () => {
     };
     fetchData();
   }, []);
-  console.log(product)
+ 
   const handleTextChange = (event) => {
     const { id, value } = event.target;
     setProduct({ ...product, [id]: value });
   };
-console.log(product.category)
+
   const handleSubmit = (event) => {
     event.preventDefault();
     id !== undefined
       ? axios.put(URL + id, product).then(() => navigate("/merchandises/"+ id))
       : axios.post(URL, product).then(() => navigate("/merchandises"));
   };
-  console.log(product);
+ 
   return (
     <form onSubmit={handleSubmit} className="product">
       <label htmlFor="category"> </label>

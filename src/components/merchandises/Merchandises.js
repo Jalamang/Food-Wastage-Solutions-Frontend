@@ -5,12 +5,7 @@ import SearchComponent from "../searchComponent/SearchComponent";
 import Vendors from "../Vendors/Vendors";
 import "./Merchandises.scss";
 
-const Merchandises = ({
-  loggedInValue,
-  setLoggedInValue,
-  loginData
-  
-}) => {
+const Merchandises = ({ loggedInValue, setLoggedInValue, loginData }) => {
   const URL = "http://localhost:3309/merchandises/";
 
   const [products, setProducts] = useState([]);
@@ -25,19 +20,35 @@ const Merchandises = ({
       });
   }, []);
 
-  let checkboxes = document.querySelectorAll("input[type='radio']");
+  let locations = [
+    "All locs",
+    "Brikama",
+    "Farafenni",
+    "Soma",
+    "Badibou",
+  ];
 
-  function findLocation() {
-    for (let checkbox of checkboxes) {
-      checkbox.addEventListener("change", (e) => {
-        setLocation(e.target.attributes.id.value);
-      });
-    }
+  function findLocation(e) {
+    setLocation(e.target.value);
   }
+
+  const displayLocations = locations.map((region, index) => (
+    <div className="main__location-filter">
+      <input
+        type="radio"
+        value={region}
+        checked={location === region}
+        onChange={findLocation}
+        key={index.toString()}
+      />
+      {" "}
+      {region}
+    </div>
+  ));
 
   let filteredProducts = products;
 
-  if (location === "All locations") {
+  if (location === "All locs") {
     filteredProducts = products;
   } else if (location) {
     filteredProducts = products.filter((product) => {
@@ -76,80 +87,7 @@ const Merchandises = ({
 
       <div className="main__location-product">
         <div className="main__location">
-          <div className="main__location-filter">
-            <label>
-              <input
-                type="radio"
-                id="All locations"
-                value={location}
-                onChange={findLocation}
-                name="radio_btn"
-                checked
-              />
-              {"  "}All locs
-            </label>
-          </div>
-
-          <div className="main__location-filter">
-            <label>
-              <input
-                type="radio"
-                id="Brikama"
-                value={location}
-                onChange={findLocation}
-                name="radio_btn"
-              />
-              {"  "}Brikama
-            </label>
-          </div>
-          <div className="main__location-filter">
-            <label>
-              <input
-                type="radio"
-                id="Farafenni"
-                value={location}
-                onChange={findLocation}
-                name="radio_btn"
-              />
-              {"  "}Farafenni
-            </label>
-          </div>
-          <div className="main__location-filter">
-            <label>
-              <input
-                type="radio"
-                id="Basse"
-                value={location}
-                onChange={findLocation}
-                name="radio_btn"
-              />
-              {"  "}Basse
-            </label>
-          </div>
-          <div className="main__location-filter">
-            <label>
-              <input
-                type="radio"
-                id="Soma &amp; Pakal"
-                value={location}
-                onChange={findLocation}
-                name="radio_btn"
-              />
-              {"  "} Soma &amp; Pakal
-            </label>
-          </div>
-          <div className="main__location-filter">
-            <label>
-              <input
-                type="radio"
-                id="Badibou"
-                value={location}
-                onChange={findLocation}
-                name="radio_btn"
-              />
-              {"  "} Badibou
-            </label>
-          </div>
+          {displayLocations} 
         </div>
 
         <div className="main__merchandises">

@@ -5,7 +5,7 @@ import SearchComponent from "../searchComponent/SearchComponent";
 import Vendors from "../Vendors/Vendors";
 import "./Merchandises.scss";
 
-const Merchandises = ({ loggedInValue, setLoggedInValue, loginData }) => {
+const Merchandises = ({ loggedInValue }) => {
   const URL = "http://localhost:3309/merchandises/";
 
   const [products, setProducts] = useState([]);
@@ -39,7 +39,7 @@ const Merchandises = ({ loggedInValue, setLoggedInValue, loginData }) => {
         value={region}
         checked={location === region}
         onChange={findLocation}
-        key={index.toString()}
+        key={index}
       />
       {" "}
       {region}
@@ -97,8 +97,6 @@ const Merchandises = ({ loggedInValue, setLoggedInValue, loginData }) => {
                 product={product}
                 key={product.merchan_id}
                 loggedInValue={loggedInValue}
-                setLoggedInValue={setLoggedInValue}
-                loginData={loginData}
               />
             );
           })}

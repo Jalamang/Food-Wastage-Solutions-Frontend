@@ -27,9 +27,10 @@ const Routing = () => {
     email: "",
     password: "",
   });
-  const [loginData, setLoginData] = useState({});
 
- console.log(loginData, loggedInValue)
+
+
+
   return (<>
     <BrowserRouter>
     <Navbar/>
@@ -40,8 +41,8 @@ const Routing = () => {
         <Route path='/vendors' element={<Vendors />} /> 
         <Route path='/merchandises' element={<Merchandises  
         loggedInValue={loggedInValue}
-        loginData={loginData} 
-        setLoggedInValue={setLoggedInValue}/>} />
+        
+       />} />
         <Route path='/merchandises/new' element={<NewProduct/>} />
         <Route path='/vendors/:id/edit' element={<EditVendor/>} />
         <Route path='/merchandises/:id/edit' element={<NewProduct/>} /> 
@@ -52,8 +53,6 @@ const Routing = () => {
         <Route element={<RestrictedRoutes />}>
         <Route path='/vendors/login' element={<Login 
          loggedInValue={loggedInValue}
-         loginData={loginData} 
-         setLoginData={setLoginData}
          setLoggedInValue={setLoggedInValue}/>} /> 
         <Route path='/vendors/new' element={<NewVendor/>} /> 
         </Route>

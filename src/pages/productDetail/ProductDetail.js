@@ -97,6 +97,7 @@ const ProductDetail = () => {
         </button>
       )}
       <DialogBox
+      
         open={showDeleteDialog}
         setOpen={setShowDeleteDialog}
         handleDelete={handleDelete}

@@ -17,12 +17,12 @@ useEffect(() => {
  dispatch(fetchVendors())
 }, [vendors])
 
-let isLoggedInUserId = "";
-for(let user of vendors){
-  if(user.email === loggedInValue.email){
-    isLoggedInUserId = user.vendor_id === owner_id
-  }
-}
+// let isLoggedInUserId = "";
+// for(let user of vendors){
+//   if(user.email === loggedInValue.email){
+//     isLoggedInUserId = user.vendor_id === owner_id
+//   }
+// }
 
 
 

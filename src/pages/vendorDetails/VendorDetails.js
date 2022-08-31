@@ -11,7 +11,7 @@ const VendorDetails = () => {
   
     useEffect(() => {
       if (location.state?.vendor) {
-        console.log("location");
+   
         setVendor(location.state?.vendor);
       } else {
         const singleVendor = `http://localhost:3309/vendors/${id}`;
@@ -22,7 +22,7 @@ const VendorDetails = () => {
             setVendor(data);
           });
       }
-      console.log(vendor);
+   
     }, []);
   
   return (
